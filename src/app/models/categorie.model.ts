@@ -1,5 +1,5 @@
-export class Categorie{
-    id!:number;
-    libelle!:string;
-    descrition!:string;
+export interface Categorie{
+    id:number;
+    libelle:string;
+    descrition:string;
 }

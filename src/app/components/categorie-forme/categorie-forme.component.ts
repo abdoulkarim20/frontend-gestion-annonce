@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie.model';
 import { CategorieService } from 'src/app/services/categorie.service';
 
@@ -9,11 +10,10 @@ import { CategorieService } from 'src/app/services/categorie.service';
   styleUrls: ['./categorie-forme.component.css']
 })
 export class CategorieFormeComponent implements OnInit {
-  categorie:Categorie = new Categorie();
   message:boolean=false;
-  constructor(private categorieServie:CategorieService) { }
+  constructor(private categorieServie:CategorieService,private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
   //avec form module
   addCategorie=new FormGroup({
@@ -30,6 +30,10 @@ export class CategorieFormeComponent implements OnInit {
   removeMessage(){
     this.message=false;
   }
+  //la redirection
+  // redirect(){
+  //   this.router.navigate(['/categorie-liste'])
+  // }
 
 
 }

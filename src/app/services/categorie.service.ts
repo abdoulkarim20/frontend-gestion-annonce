@@ -1,21 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Categorie } from '../models/categorie.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategorieService {
-  private apiUrl="http://localhost:8080/categorie/api"; 
-
+  private host=environment.hostCategorie;
   constructor(private http:HttpClient) { }
   //toutes les categories
   getAllCategories():Observable<Categorie[]>{
-    return this.http.get<Categorie[]>(`${this.apiUrl}/categories`);
+    return this.http.get<Categorie[]>(`${this.host}/categories`);
   }
   //creation d'une categorie.
-  public createCategorie(categore:any){
-    return this.http.post(`${this.apiUrl}/categorie/save`,categore);
+  public createCategorie(categore:Categorie[]){
+    return this.http.post(`${this.host}/categorie/save`,categore);
   }
 }

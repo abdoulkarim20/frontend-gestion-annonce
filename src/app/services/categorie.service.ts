@@ -22,4 +22,14 @@ export class CategorieService {
   public deleteCategorie(id:number){
     return this.http.delete(`${this.host}/categorie/delete/${id}`);
   }
+
+  //recupere une categorie
+  public getOnceCategorie(id:number){
+    return this.http.get(`${this.host}/categorie/${id}`)
+  }
+
+  //modification a partir de l'id recuperer
+  public updateCategorie(id:number,categore:Categorie[]){
+    return this.http.put(`${this.host}/categorie/edit/${id}`,categore)
+  }
 }

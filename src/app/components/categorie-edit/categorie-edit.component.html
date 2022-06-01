@@ -1,1 +1,30 @@
-<p>categorie-edit works!</p>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-center">Formulaire de modification des categorie</h4>
+            <div *ngIf="message" class="alert alert-success" role="alert">
+                Categorie modifier avec success. <span class="btn" (click)="removeMessage()"><i class="bi bi-x-circle"></i></span>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="formulaire-section">
+                <div class="col-md-8 col-sm-12">
+                    <img src="../assets/images/relax.png" class="img-fluid"/>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-3">
+                    <form [formGroup]="editCategorie" (ngSubmit)="updateCategorie()">
+                      <div class="mb-3">
+                        <label for="nomProduit" class="form-label">Libelle du categorie</label>
+                        <input type="text" class="form-control" formControlName="libelle" id="nomProduit">
+                      </div>
+                      <div class="mb-3">
+                        <label for="descriptionProduit" class="form-label">Description du categorie</label>
+                        <textarea class="form-control" id="descriptionProduit" formControlName="descrition" style="height: 100px"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-info text-color my-3">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>

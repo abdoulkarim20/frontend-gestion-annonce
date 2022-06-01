@@ -2,6 +2,9 @@
     <div class="card">
         <div class="card-header">
             <h4 class="text-center">La liste des categorie</h4>
+            <div *ngIf="message" class="alert alert-success" role="alert">
+                Vous avez supprimer une categorie avec success. <span class="btn" (click)="removeMessage()"><i class="bi bi-x-circle"></i></span>
+            </div>
         </div>
         <div class="card-body">
             <table class="table">

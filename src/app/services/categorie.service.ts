@@ -18,4 +18,8 @@ export class CategorieService {
   public createCategorie(categore:Categorie[]){
     return this.http.post(`${this.host}/categorie/save`,categore);
   }
+  //supprimer une categorie
+  public deleteCategorie(id:number){
+    return this.http.delete(`${this.host}/categorie/delete/${id}`);
+  }
 }

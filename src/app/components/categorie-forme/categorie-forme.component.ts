@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Categorie } from 'src/app/models/categorie.model';
 import { CategorieService } from 'src/app/services/categorie.service';
 
 @Component({
@@ -11,17 +10,19 @@ import { CategorieService } from 'src/app/services/categorie.service';
 })
 export class CategorieFormeComponent implements OnInit {
   message:boolean=false;
-  constructor(private categorieServie:CategorieService,private router:Router) { }
+  submitted:boolean=false
+  constructor(private categorieServie:CategorieService,private router:Router,private fb:FormBuilder) { }
 
   ngOnInit(){
   }
   //avec form module
-  addCategorie=new FormGroup({
-    libelle:new FormControl(''),
-    descrition:new FormControl('')
+  addCategorie= this.fb.group({
+    libelle:['',Validators.required],
+    descrition:['',Validators.required]
   })
   saveCategorie(){
-    this.categorieServie.createCategorie(this.addCategorie.value).subscribe((data=>{
+    if(this.addCategorie.invalid) return
+      this.categorieServie.createCategorie(this.addCategorie.value).subscribe((data=>{
       this.message=true,
       this.addCategorie.reset({})
     }))

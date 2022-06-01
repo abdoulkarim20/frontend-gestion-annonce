@@ -22,7 +22,8 @@ export class CategorieListeComponent implements OnInit {
   }
   //suppression de categorie
   deleteCategorie(id:number){
-    alert("la categorie a supprimer est "+id)
+    this.categorieService.deleteCategorie(id).subscribe((data)=>{
+    });
   }
   //modification de categore
   editeCategorie(id:number){

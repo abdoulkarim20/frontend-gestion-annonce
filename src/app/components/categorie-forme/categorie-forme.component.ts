@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CategorieService } from 'src/app/services/categorie.service';
 
@@ -31,10 +31,10 @@ export class CategorieFormeComponent implements OnInit {
   removeMessage(){
     this.message=false;
   }
-  //la redirection
-  // redirect(){
-  //   this.router.navigate(['/categorie-liste'])
-  // }
+  // la redirection
+  redirect(){
+    this.router.navigate(['/categorie-liste'])
+  }
 
 
 }

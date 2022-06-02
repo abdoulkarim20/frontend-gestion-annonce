@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie.model';
 import { CategorieService } from 'src/app/services/categorie.service';
 
@@ -15,7 +15,7 @@ export class CategorieEditComponent implements OnInit {
   id!:number
 
 
-  constructor(private categorieService:CategorieService,private fb:FormBuilder,private router:ActivatedRoute) { }
+  constructor(private categorieService:CategorieService,private fb:FormBuilder,private router:ActivatedRoute,private redirectRoute:Router) { }
 
   ngOnInit() {
     this.id=this.router.snapshot.params['id']
@@ -48,6 +48,10 @@ export class CategorieEditComponent implements OnInit {
   //remve message success
   removeMessage(){
     this.message=false;
+    this.redirect();
   }
-
+  
+  redirect(){
+    this.redirectRoute.navigate(['/categorie-liste'])
+  }
 }

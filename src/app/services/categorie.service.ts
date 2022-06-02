@@ -24,8 +24,8 @@ export class CategorieService {
   }
 
   //recupere une categorie
-  public getOnceCategorie(id:number){
-    return this.http.get(`${this.host}/categorie/${id}`)
+  public getOnceCategorie(id:number):Observable<Categorie>{
+    return this.http.get<Categorie>(`${this.host}/categorie/${id}`)
   }
 
   //modification a partir de l'id recuperer

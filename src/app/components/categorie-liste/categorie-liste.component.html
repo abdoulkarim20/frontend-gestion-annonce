@@ -24,7 +24,7 @@
                         <td class="btn button-style" routerLink="/edit-categore/{{categorie.id}}">
                             <i class="bi bi-pencil-square"></i>
                         </td>
-                        <td class="btn button-style" (click)="detailCategrie(categorie.id)">
+                        <td class="btn button-style" routerLink="/detail-categorie/{{categorie.id}}">
                             <i class="bi bi-eye-fill"></i>
                         </td>
                         <td class="btn button-style" (click)="deleteCategorie(categorie.id)">

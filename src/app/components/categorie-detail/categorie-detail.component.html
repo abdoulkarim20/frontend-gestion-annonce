@@ -1,1 +1,14 @@
-<p>categorie-detail works!</p>
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="text-center">Detail de la categorie</h1>
+        </div>
+        <div class="card-body" *ngIf="categore">
+            <p class="text-center">Libelle de la categorie: <span>{{categore.libelle}}</span></p>
+            <p class="text-center">Description de la categorie: <span>{{categore.descrition}}</span></p>
+            <div class="text-center">
+                <button class="btn btn-info" routerLink="/categorie-liste">Retour</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -37,11 +37,11 @@ export class CategorieEditComponent implements OnInit {
 
   //update categorie
   updateCategorie(){
-  console.log(this.editCategorie.value);
+  // console.log(this.editCategorie.value);
+  if(this.editCategorie.invalid) return;
   this.categorieService.updateCategorie(this.id,this.editCategorie.value)
   .subscribe((data=>{
     this.message=true
-    
   }))
   }
 

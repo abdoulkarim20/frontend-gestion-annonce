@@ -16,7 +16,7 @@ export class CategorieFormeComponent implements OnInit {
   ngOnInit(){
   }
   //avec form module
-  addCategorie= this.fb.group({
+  addCategorie = this.fb.group({
     libelle:['',Validators.required],
     descrition:['',Validators.required]
   })
@@ -26,6 +26,10 @@ export class CategorieFormeComponent implements OnInit {
       this.message=true,
       this.addCategorie.reset({})
     }))
+  }
+  //controle des champs
+  get controleChamps(){
+    return this.addCategorie.controls;
   }
 
   removeMessage(){

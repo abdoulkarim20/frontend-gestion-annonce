@@ -44,7 +44,7 @@ export class CategorieEditComponent implements OnInit {
     this.message=true
   }))
   }
-
+  
   //remve message success
   removeMessage(){
     this.message=false;

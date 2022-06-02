@@ -16,10 +16,20 @@
                       <div class="mb-3">
                         <label for="nomProduit" class="form-label">Libelle du categorie</label>
                         <input type="text" class="form-control" formControlName="libelle" id="nomProduit">
+                        <div *ngIf="submitted || controleChamps['libelle'].touched && controleChamps['libelle'].invalid">
+                            <p *ngIf="controleChamps['libelle'].errors && controleChamps['libelle'].errors['required']">
+                                le champs est obligatoire
+                            </p>
+                        </div>
                       </div>
                       <div class="mb-3">
                         <label for="descriptionProduit" class="form-label">Description du categorie</label>
                         <textarea class="form-control" id="descriptionProduit" formControlName="descrition" style="height: 100px"></textarea>
+                        <div *ngIf="submitted || controleChamps['descrition'].touched && controleChamps['descrition'].invalid">
+                            <p *ngIf="controleChamps['descrition'].errors && controleChamps['descrition'].errors['required']">
+                                le champs est obligatoire
+                            </p>
+                        </div>
                       </div>
                       <button type="submit" class="btn btn-info text-color my-3">Enregistrer</button>
                     </form>

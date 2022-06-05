@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  hostCategorie:"http://localhost:8080/categorie/api"
+  hostCategorie:"http://localhost:8080/categorie/api/v1"
 };
 
 /*

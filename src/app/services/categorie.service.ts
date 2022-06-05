@@ -12,24 +12,24 @@ export class CategorieService {
   constructor(private http:HttpClient) { }
   //toutes les categories
   getAllCategories():Observable<Categorie[]>{
-    return this.http.get<Categorie[]>(`${this.host}/categories`);
+    return this.http.get<Categorie[]>(`${this.host}/all`);
   }
   //creation d'une categorie.
   public createCategorie(categore:Categorie[]){
-    return this.http.post(`${this.host}/categorie/save`,categore);
+    return this.http.post(`${this.host}/save`,categore);
   }
   //supprimer une categorie
   public deleteCategorie(id:number){
-    return this.http.delete(`${this.host}/categorie/delete/${id}`);
+    return this.http.delete(`${this.host}/delete/${id}`);
   }
 
   //recupere une categorie
   public getOnceCategorie(id:number):Observable<Categorie>{
-    return this.http.get<Categorie>(`${this.host}/categorie/${id}`)
+    return this.http.get<Categorie>(`${this.host}/get/${id}`)
   }
 
   //modification a partir de l'id recuperer
   public updateCategorie(id:number,categore:Categorie[]){
-    return this.http.put(`${this.host}/categorie/edit/${id}`,categore)
+    return this.http.put(`${this.host}/edit/${id}`,categore)
   }
 }

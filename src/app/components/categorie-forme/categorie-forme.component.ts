@@ -10,7 +10,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
 })
 export class CategorieFormeComponent implements OnInit {
   message:boolean=false;
-  submitted:boolean=false
+  // submitted:boolean=false
   constructor(private categorieServie:CategorieService,private router:Router,private fb:FormBuilder) { }
 
   ngOnInit(){

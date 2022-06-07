@@ -21,13 +21,13 @@
                         <td>{{categorie.id}}</td>
                         <td>{{categorie.libelle}}</td>
                         <td>{{categorie.descrition}}</td>
-                        <td class="btn button-style" routerLink="/edit-categore/{{categorie.id}}">
+                        <td class="btn button-style text-primary" routerLink="/edit-categore/{{categorie.id}}">
                             <i class="bi bi-pencil-square"></i>
                         </td>
-                        <td class="btn button-style" routerLink="/detail-categorie/{{categorie.id}}">
+                        <td class="btn button-style text-info" routerLink="/detail-categorie/{{categorie.id}}">
                             <i class="bi bi-eye-fill"></i>
                         </td>
-                        <td class="btn button-style" (click)="deleteCategorie(categorie.id)">
+                        <td class="btn button-style text-danger" (click)="deleteCategorie(categorie.id)">
                             <i class="bi bi-trash3-fill"></i>
                         </td>
                     </tr>

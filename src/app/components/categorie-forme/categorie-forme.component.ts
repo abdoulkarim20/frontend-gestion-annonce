@@ -10,6 +10,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
 })
 export class CategorieFormeComponent implements OnInit {
   message:boolean=false;
+  errorMessage!:string
   // submitted:boolean=false
   constructor(private categorieServie:CategorieService,private router:Router,private fb:FormBuilder) { }
 
@@ -22,10 +23,14 @@ export class CategorieFormeComponent implements OnInit {
   })
   saveCategorie(){
     if(this.addCategorie.invalid) return
-      this.categorieServie.createCategorie(this.addCategorie.value).subscribe((data=>{
+      this.categorieServie.createCategorie(this.addCategorie.value).subscribe((data)=>{
       this.message=true,
       this.addCategorie.reset({})
-    }))
+    },(error)=>{
+      this.errorMessage=error;
+      console.log(error);
+          
+    })
   }
   //controle des champs
   get controleChamps(){

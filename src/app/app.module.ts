@@ -9,6 +9,7 @@ import { CategorieListeComponent } from './components/categorie-liste/categorie-
 import { CategorieDetailComponent } from './components/categorie-detail/categorie-detail.component';
 import { CategorieEditComponent } from './components/categorie-edit/categorie-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

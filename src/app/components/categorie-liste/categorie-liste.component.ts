@@ -10,6 +10,12 @@ import { CategorieService } from 'src/app/services/categorie.service';
 export class CategorieListeComponent implements OnInit {
   categorie!:Categorie[]
   message:boolean=false
+  errorMessage!:''
+  //Pour la pagination
+  page:number=1;
+  count:number=0;
+  tableSize:number=2;
+  tableSizes!:[3,5];
 
   constructor(private categorieService:CategorieService) { }
 
@@ -19,16 +25,36 @@ export class CategorieListeComponent implements OnInit {
   private getAllCategorie(){
     this.categorieService.getAllCategories().subscribe(data=>{
       this.categorie=data;
+    },(error)=>{
+      this.errorMessage=error
+      
     })
   }
+
+  //pour faire la pagination
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.getAllCategorie();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.getAllCategorie();
+  }
+
+
+
   //suppression de categorie
   deleteCategorie(id:number){
-    let confirmation=confirm("Est-vous sur de vouloir supprimer ?"+id)
+    let confirmation=confirm("La suppression d'une categorie est irreversible etes-vous sur ?")
     if(confirmation==false)return;
     // this.categorie.splice(id,1)
     this.categorieService.deleteCategorie(id).subscribe((data)=>{
       this.message=true;
       this.ngOnInit();
+    },(error)=>{
+      this.errorMessage=error;
+      
     });
   }
   //modification de categore

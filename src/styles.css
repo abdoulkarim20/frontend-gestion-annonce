@@ -1,2 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+body{
+    background: linear-gradient(107.3deg, #156EF2 38.13%, #00C5F0 93.13%);
+}

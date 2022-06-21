@@ -1,0 +1,6 @@
+.rond{
+    border: 1px solid red;
+}
+.image-bacgournd{
+    background-image: url('../../../assets/images/bg.png');
+}

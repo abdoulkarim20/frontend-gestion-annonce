@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let categorie of categorie | paginate
+                    <tr *ngFor="let categorie of categories | paginate
                             :{ itemsPerPage:tableSize, 
                                 currentPage:page, 
                                 totalItems:count };">

@@ -10,6 +10,9 @@ import { CategorieDetailComponent } from './components/categorie-detail/categori
 import { CategorieEditComponent } from './components/categorie-edit/categorie-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProduitFormulaireComponent } from './components/produit-formulaire/produit-formulaire.component';
+import { ListeProduitComponent } from './components/liste-produit/liste-produit.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CategorieFormeComponent,
     CategorieListeComponent,
     CategorieDetailComponent,
-    CategorieEditComponent
+    CategorieEditComponent,
+    ProduitFormulaireComponent,
+    ListeProduitComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

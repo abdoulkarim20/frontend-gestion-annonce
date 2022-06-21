@@ -8,7 +8,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
   styleUrls: ['./categorie-liste.component.css']
 })
 export class CategorieListeComponent implements OnInit {
-  categorie!:Categorie[]
+  categories!:Categorie[]
   message:boolean=false
   errorMessage!:''
   //Pour la pagination
@@ -24,7 +24,7 @@ export class CategorieListeComponent implements OnInit {
   }
   private getAllCategorie(){
     this.categorieService.getAllCategories().subscribe(data=>{
-      this.categorie=data;
+      this.categories=data;
     },(error)=>{
       this.errorMessage=error
       

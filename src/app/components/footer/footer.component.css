@@ -1,0 +1,16 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background: linear-gradient(93.3deg, #156EF2 47.28%, #00C5F0 93.72%);
+    height: 97px;
+}
+p{
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}

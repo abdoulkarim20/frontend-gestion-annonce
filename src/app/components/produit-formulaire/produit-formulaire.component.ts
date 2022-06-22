@@ -16,7 +16,7 @@ export class ProduitFormulaireComponent implements OnInit {
   produits!:Produit[]
 
   //le lien de l'image
-  urllink:string="assets/images/Apple-iPhone-X-232.png";
+  urllink:any="";
 
   constructor(
               private categorieService:CategorieService,
@@ -59,12 +59,12 @@ export class ProduitFormulaireComponent implements OnInit {
   }
   //La methode qui controle la selection d'image
   selectFile(even:any){
-    if(even.target.files){
-      let reader=new FileReader()
-      reader.readAsDataURL(even.target.files[0])
+    if(even.target.files && even.target.files[0]){
+      var reader=new FileReader();
       reader.onload=(even:any)=>{
         this.urllink=even.target.result
       }
+      reader.readAsDataURL(even.target.files[0])
     }
   }
 

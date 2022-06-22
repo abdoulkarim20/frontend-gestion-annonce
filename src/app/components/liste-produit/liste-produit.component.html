@@ -1,10 +1,25 @@
-<div class="container-fluid">
+<app-accueil></app-accueil>
+<div class="container mt-5">
+  <div>
+    <h4>Nos annonces</h4>
+    <div class="search-and-filtre">
+      <input type="search" class="input-search" placeholder="lolen di set">
+      <button class="button-filtre mx-5">Catégories</button>
+      <button class="button-filtre mx-5">Setal</button>
+    </div>
+  </div>
   <div class="row mt-3">
-    <div class="col-md-3 col-sm-12 py-3" *ngFor="let produit of produits">
-        <h4 class="text-center text-white">{{produit.produitName}}</h4>
-        <img class="img-fluid" src="assets/images/Apple-iPhone-X-232.png">
-        <h5 class="text-center text-white">{{produit.prix+" CFA"}}</h5>
-        <p class="text-center text-white">{{produit.categorie.libelle}}</p>
+    <div class="col-md-4 col-sm-12 py-3" *ngFor="let produit of produits">
+        <div class="info-produit">
+          <div class="case-image mb-3">
+            <img class="img-fluid" [src]="produit.photo">
+          </div>
+          <h4 class="text-center mb-3">{{produit.produitName}}</h4>
+          <div class="case-info-produit mb-5">
+            <h5 class="text-center mx-3">{{produit.prix+" CFA"}}</h5>
+            <button class="btn-commander mx-3 text-white">Commander</button>
+          </div>
+        </div>
     </div>
   </div>
 </div>

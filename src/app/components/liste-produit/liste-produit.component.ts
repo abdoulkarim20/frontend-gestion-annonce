@@ -8,9 +8,17 @@ import { ProduitService } from 'src/app/services/produit.service';
   styleUrls: ['./liste-produit.component.css']
 })
 export class ListeProduitComponent implements OnInit {
-  urllink:string="assets/images/Apple-iPhone-X-232.png";
+
+  // url:string = "unsafe:C:\fakepath\wejfewhriheu.png"
+  // path = new URL(this.url).pathname;
+  // mot = this.path.split("C:%0Cakepath");
+
+  // imageUri:any = "../../assets/" + this.mot[1];
+
+  urllink:string="../../../assets/images";
   produits!:Produit[]
   errorMessage!:string
+
   constructor(private serviceProduit:ProduitService) { }
 
   ngOnInit() {
@@ -26,6 +34,17 @@ export class ListeProduitComponent implements OnInit {
       console.log(this.errorMessage);
       
     })
+  }
+
+
+  selectFile(even:any){
+    if(even.target.files && even.target.files[0]){
+      var reader=new FileReader();
+      reader.onload=(even:any)=>{
+        this.urllink=even.target.result
+      }
+      reader.readAsDataURL(even.target.files[0])
+    }
   }
 
 }

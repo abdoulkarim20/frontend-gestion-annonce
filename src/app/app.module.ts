@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ProduitFormulaireComponent } from './components/produit-formulaire/produit-formulaire.component';
 import { ListeProduitComponent } from './components/liste-produit/liste-produit.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AccueilComponent } from './components/accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CategorieEditComponent,
     ProduitFormulaireComponent,
     ListeProduitComponent,
-    FooterComponent
+    FooterComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

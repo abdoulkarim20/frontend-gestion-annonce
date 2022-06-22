@@ -1,6 +1,48 @@
 .rond{
     border: 1px solid red;
 }
-.image-bacgournd{
-    background-image: url('../../../assets/images/bg.png');
+.case-image{
+    background: #156EF2;
+    border-radius: 10px 10px 0px 0px;
+}
+.info-produit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 9px rgba(197, 197, 197, 0.25);
+    border-radius: 10px;
+    
+}
+
+.case-info-produit{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-commander{
+    background: #00C5F0;
+    box-shadow: 3px 3px 4px rgba(82, 82, 82, 0.25);
+    border-radius: 6px;
+    border: none;
+}
+.search-and-filtre{
+    display: flex;
+    flex-direction: row;
+}
+.input-search{
+    background: #FFFFFF;
+    border: 1px solid #156EF2;
+    border-radius: 6px;
+    width: 739.15px;
+    height: 55px;
+}
+.button-filtre{
+    width: 189.11px;
+    height: 55px;
+    background: #00C5F0;
+    box-shadow: 3px 3px 4px rgba(82, 82, 82, 0.25);
+    border-radius: 6px;
+    border: none;
 }
